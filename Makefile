@@ -1,10 +1,8 @@
-INCLUDE=./include
-SRC=./src
-OBJ=./obj
-BIN=./bin
-
 all:
-	gcc ./src/Shell.c -o $(OBJ)/Shell.o -I$(INCLUDE)
+	gcc ./src/Shell.c ./src/Fat.c -o ./obj/program -I ./include
 
 run:
-	./$(OBJ)/Shell.o
+	./obj/program
+
+clean:
+	rm -rf ./obj/*

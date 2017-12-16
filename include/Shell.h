@@ -1,8 +1,8 @@
 #ifndef SHELL_H
 #define SHELL_H
 
-void init();
-void load();
+#include "Fat.h"
+
 void ls(char param[]);
 void mkdir(char param[]);
 void create(char param[]);

@@ -1,16 +1,10 @@
 #include "Shell.h"
+#include "Fat.h"
 
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-void init(){
-
-}
-
-void load(){
-
-}
 
 void ls(char param[]){
     
@@ -39,6 +33,7 @@ void write(char str[], char param[]){
 void append(char str[], char param[]){
 
 }
+
 
 int main(){
     char cmd[6], str[100], param[100];
@@ -92,7 +87,6 @@ int main(){
         }
 
         //printf("%s %s %s", cmd, str, param);
-
     }
 
     return 0;
