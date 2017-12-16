@@ -25,63 +25,27 @@ int main(){
             return 0;
         }else if(!strcmp(cmd, "ls")){
             scanf("%s", param);
-            if(strlen(param) > 0){
-                //ls
-            }else{
-                printf("msg: parametros insuficientes para ls\n");
-            }
+            //ls
         }else if(!strcmp(cmd, "mkparam")){
             scanf("%s", param);
-            if(strlen(param) > 0){
-                //mkparam
-            }else{
-                printf("msg: parametros insuficientes para mkparam\n");
-            }
+            //mkparam
         }else if(!strcmp(cmd, "create")){
             scanf("%s", param);
-            if(strlen(param) > 0){
-                //create
-            }else{
-                printf("msg: parametros insuficientes para create\n");
-            }
+            //create
         }else if(!strcmp(cmd, "unlink")){
             scanf("%s", param);
-            if(strlen(param) > 0){
-                //unlink
-            }else{
-                printf("msg: parametros insuficientes para unlink\n");
-            }
+            //unlink
         }else if(!strcmp(cmd, "read")){
             scanf("%s", param);
-            if(strlen(param) > 0){
-                //read
-            }else{
-                printf("msg: parametros insuficientes para read\n");
-            }
+            //read
         }else if(!strcmp(cmd, "write")){
             scanf("%s", str);
-            if(strlen(str) > 0){
-                scanf("%s", param);
-                if(strlen(param) > 0){
-                    //write
-                }else{
-                    printf("mgs: parametros insuficientes para write\n");
-                }
-            }else{
-                printf("mgs: parametros insuficientes para write\n");
-            }
+            scanf("%s", param);
+            //write
         }else if(!strcmp(cmd, "append")){
             scanf("%s", str);
-            if(strlen(str) > 0){
-                scanf("%s", param);
-                if(strlen(param) > 0){
-                    //write
-                }else{
-                    printf("mgs: parametros insuficientes para append\n");
-                }
-            }else{
-                printf("mgs: parametros insuficientes para append\n");
-            }
+            scanf("%s", param);
+            //append
         }else{
             printf("msg: comando inválido\n");
         }
