@@ -32,6 +32,10 @@ void init()
     fwrite(&clusters, sizeof(clusters), 1,ptr_file);
     
 	fclose(ptr_file);
+
+
+	//colocar tabela fat na memoria
+	
 }
 
 void load()

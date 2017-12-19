@@ -8,10 +8,40 @@
 
 void ls(char param[]){
     
+    //caminhar na arvore de diretorios até achar o diretorio     
+    int posicao = -1;
+    for(int i=0;i<ENTRY_BY_CLUSTER;i++){
+        if(strcomp(root_dir[i].filename,param)){
+            posicao = i;
+        }
+    }
+    if(posicao > -1){
+        //listar o diretorio aqui
+    }
+
 }
 
 void mkdir(char param[]){
+    //preciso escrever um novo diretorio
 
+
+    //encontrar posicao livre
+    int posicao = -1;    
+    for(int i=0;i<ENTRY_BY_CLUSTER;i++){
+        if(&root_dir[i] != 0x00){
+            posicao = i;
+        }
+    }
+
+    if(posicao > -1){
+        &root_dir[posicao] = malloc(sizeof(dir_entry_t));
+        root_dir[posicao].filename = param;
+        root_dir[posicao].first_block = last_pos_root;
+        //size in bytes
+        root_dir[posicao].size = 2;
+        root_dir[posicao].attributes = 1; //1 para diretorio e 0 para arquivo        
+    }
+    //preciso persistir isso no disco
 }
 
 void create(char param[]){
