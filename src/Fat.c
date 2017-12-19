@@ -21,7 +21,7 @@ void init()
 	fwrite(&boot_block, sizeof(boot_block), 1,ptr_file);
 
 	for (i = 0; i < NUM_CLUSTER; ++i)
-		fat[i] = 0xfffe;
+		fat[i] = 0;
 
 	fwrite(&fat, sizeof(fat), 1, ptr_file);
 
@@ -47,4 +47,19 @@ void load()
 	fread(fat, sizeof(fat), 1, ptr_file);
 	fread(root_dir, sizeof(root_dir), 1, ptr_file);
 	fclose(ptr_file);
+}
+
+
+void persisteDados(){
+	FILE* ptr_file;
+	int i;
+	ptr_file = fopen(fat_name, "rb");	
+	ptr_file = fopen(fat_name,"wb");
+	fwrite(&boot_block, sizeof(boot_block), 1,ptr_file);
+	fwrite(&fat, sizeof(fat), 1,ptr_file);
+	fwrite(&root_dir, sizeof(root_dir), 1,ptr_file);
+	fwrite(&clusters, sizeof(clusters), 1,ptr_file);
+
+	fclose(ptr_file);
+
 }
