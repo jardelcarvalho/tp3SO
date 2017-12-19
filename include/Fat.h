@@ -33,12 +33,15 @@ typedef union _data_cluster data_cluster;
 
 /*DATA DECLARATION*/
 unsigned short fat[NUM_CLUSTER];
+
+unsigned short fat_memoria[8];
+
 unsigned char boot_block[CLUSTER_SIZE];
 dir_entry_t root_dir[ENTRY_BY_CLUSTER];
 data_cluster clusters[4086];
 
 void init();
-bool load();
+void load();
 
 
 #endif //TP3_SO_FAT_H
